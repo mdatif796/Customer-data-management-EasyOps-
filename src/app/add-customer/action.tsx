@@ -16,6 +16,7 @@ export const formSubmit = async (e: FormData) => {
         "Content-type": "application/json",
       },
       body: JSON.stringify(formData),
+      cache: "no-cache",
     }
   );
   revalidateTag("customers");

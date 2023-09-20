@@ -7,6 +7,7 @@ export const handleDelete = async (customerId: string) => {
     `https://650aa113dfd73d1fab089de1.mockapi.io/customers/${customerId}`,
     {
       method: "DELETE",
+      cache: "no-cache",
     }
   );
   revalidateTag("customers");
@@ -27,6 +28,7 @@ export const handleEdit = async (formData: FormData, customerId: string) => {
         "Content-Type": "Application/json",
       },
       body: JSON.stringify(customer),
+      cache: "no-cache",
     }
   );
   revalidateTag("customers");
