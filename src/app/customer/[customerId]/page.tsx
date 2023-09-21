@@ -1,3 +1,4 @@
+import NotFound from "@/components/NotFound";
 import Customer from "./Customer";
 
 const customer = async ({ params }: { params: { customerId: string } }) => {
@@ -11,7 +12,7 @@ const customer = async ({ params }: { params: { customerId: string } }) => {
   );
   const res = await response.json();
   if (!res?.name) {
-    return <div>error</div>;
+    return <NotFound />;
   }
 
   return (
